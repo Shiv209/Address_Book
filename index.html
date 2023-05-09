@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Address Book</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="script2.js"></script>
+    <script src="./service.js"></script>
+    <script src="validation.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <h1 class="header-title">Address Book</h1>
+      </div>
+      <nav class="NavBar">
+        <ul>
+          <li>
+            <a class="nav-links" href="">HOME</a>
+          </li>
+          <li>
+            <a class="nav-links" href="#" id="add">+ADD</a>
+          </li>
+        </ul>
+        <div class="img-div"><img src="Address/blog-icon.png" alt="" /></div>
+      </nav>
+    </header>
+    <div class="body-container">
+      <div class="contact-info">
+        <h4>CONTACTS</h4>
+        <div class="contact-list">
+          <div class="contact-list-data"></div>
+        </div>
+      </div>
+      <div class="form-page">
+        <form id="form-data" action="">
+          <button type="reset" class="btn-cancel">x</button>
+          <p><b>Name</b></p>
+          <input type="text" required id="name" onblur="validateName()" />
+          <p id="nameError" class="error"></p>
+          <p><b>Email</b></p>
+          <input type="email" required id="email" onblur="validateEmail()" />
+          <p id="emailError" class="error"></p>
+          <div class="mob-number">
+            <div>
+              <p><b>Mobile</b></p>
+              <input
+                type="number"
+                required
+                id="mob"
+                class="mobile"
+                onblur="validateMobile()"
+              />
+              <p id="mobError" class="error"></p>
+            </div>
+            <div>
+              <p><b>Landline</b></p>
+              <input
+                type="tel"
+                required
+                id="tel"
+                class="mobile"
+                onblur="validateLandline()"
+              />
+              <p id="telError" class="error"></p>
+            </div>
+          </div>
+          <p><b>Website</b></p>
+          <input type="url" required id="website" onblur="validateWebsite()" />
+          <br />
+          <p id="websiteError" class="error"></p>
+          <p><b>Address</b></p>
+          <textarea
+            id="address"
+            required
+            rows="5"
+            cols="103"
+            onblur="validateAddress()"
+          ></textarea>
+          <div id="addressError" class="error"></div>
+          <button type="submit" id="btn-add-update" class="btn">Add</button>
+          <button type="submit" id="btn-add-update" class="btn-update">
+            Update
+          </button>
+        </form>
+      </div>
+      <div class="center-info">
+        <ul class="view-info"></ul>
+      </div>
+      <div class="show-info">
+        <ul class="operation-edit">
+          <li><img src="Address/Edit-icon.png" alt="" /></li>
+          <li><a href="#" id="edit">EDIT</a></li>
+        </ul>
+      </div>
+      <div class="show-info">
+        <ul class="operation-edit">
+          <li><img src="Address/delete1.png"" alt=""></li>
+          <li><a href="#" id="delete">DELETE</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
